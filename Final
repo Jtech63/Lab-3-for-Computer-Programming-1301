@@ -1,0 +1,62 @@
+#Ask user name, then 2 numbers. Calculate the math function of numbers based on list provided. 
+#If number 2 =0 or if user selects option that isnt there program closes.
+
+print "Please enter your first name: \n" ;
+$name = <STDIN>;
+chomp $name;
+#Ask user for "first name"
+
+print "Please enter a number\n";
+$number1 = <STDIN>;
+chomp $number1;
+#Ask user for first number
+
+print "Please enter a second number\n";
+$number2 = <STDIN>;
+chomp $number2;
+#Ask user for second number
+
+if($number2 == 0)	
+{
+print "Please enter a non-zero number (you entered $number2)\n";
+print "Exiting this program.\n";
+exit ;
+}
+#If user types 0 as second number then displays message and exits
+
+print("Please make a selection using the menu below\n");
+print "1 - Addition\n";
+print "2 - Multiplication\n";
+print "3 - Compute Modulus of number\n";
+$answer = <STDIN>;
+chomp $answer;
+
+#ask user to select math function from list 
+
+print "You selected $answer as your menu choice\n\n";
+
+if($answer == 1)
+{
+  $sum = $number1 + $number2;
+  print("$number1 + $number2 is $sum\n");
+ }
+ #if user selects 1 the numbers add and display
+ 
+elsif($answer == 2)
+{
+  $prod = $number1 * $number2;
+  print "$number1 * $number2 is $prod\n";
+}
+#if use selects 2 the numbers multiply and display
+
+elsif($answer == 3)
+{
+  $mod =($number1 % $number2);
+  print "$number1 % $number2 is $mod\n";
+}
+#if user selects 3 the numbers modulus and display
+
+else
+ {  print "$answer is not a valid menu choice! Exit program.\n";}
+ #if user selects option that isnt given program exits
+ 
